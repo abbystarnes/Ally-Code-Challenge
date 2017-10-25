@@ -1,0 +1,32 @@
+/*
+html - font size declaration in px
+
+l layout modules
+
+c components
+
+m modifiers under each component?
+
+media queries
+  adjust html font size here
+  repeat same order inside
+
+
+
+
+//// hide 'menu' text 
+  button {
+    background: url('hamburger.svg');
+  }
+
+  button span {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+
+*/
