@@ -4,17 +4,21 @@
 <head>
   <meta charset="utf-8">
   <title>URBANK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="main.css">
+  <script type='text/javascript' src='main.js'></script>
 </head>
 
 <body>
-  <header class='c-header'>
+  <header class='c-headersection'>
     <div class='l-wrapper'>
-      <a class='c-logo' href=""><img src="" alt="URBANK logo, a piggy bank"></a>
+      <h1 class='c-logo'><a href="index.html"><img src="./img/urbank@2x.png" alt="URBANK"></a></h1>
       <!-- start hidden, show if no js, hide nav button if javascript is not available (progressive enhancement) by adding js class or is-hidden -->
       <!--  -->
-      <nav class='c-nav (is-active -- NOT on by default)' role='navigation'>
-        <a href='c-nav-links' class='c-button' aria-expanded='false' aria-controls='c-nav-links'><span>Menu</span></a>
-        <ul id='c-nav-links'>
+      <nav class='c-nav' role='navigation'>
+        <a href='#c-nav-links' class='c-button c-button--hamburger' aria-expanded='false' aria-controls='c-nav-links'><span>Menu</span></a>
+        <ul id='c-nav-links' class='is-active'>
           <li><a href="#">home</a></li>
           <li><a href="#">employee</a></li>
           <li><a href="#">company</a></li>
@@ -26,30 +30,93 @@
   </header>
   <div class='l-wrapper'>
     <main>
+      <aside class='l-aside'>
+        <button class='c-button c-button--fullwidth'>Login</button>
+        <div class='c-overlay is-active'></div>
+        <!-- give dialogue keyboard focus when user clicks button to open dialogue, start at first input  JS .focus()-->
+        <!-- last element (submit button, keyPress handler to trap forward tab key to redirect it to first element) -->
+        <!-- first element add keyPress handler to trap shift+tab key combination so backwards tab order doesn't leave the dialog (x button??) -->
+        <!-- make ESC key close dialogue and discard changes -->
+        <!-- RESTORE focus() to proper place after closing and/or submitting dialogue -->
+        <div class='c-dialog is-active' role='dialog' aria-labelledby='dialogue-title'>
+          <button type='button' class='c-button c-button--close' aria-label='close'></button>
+          <h3 class='c-header c-header--medium' id='dialogue-title'>Sign In To Your Account</h3>
+          <form class='c-form' action="">
+            <div class='c-form__field'>
+              <label for="username">Username</label>
+              <input name='username' type="text">
+            </div>
+            <div class='c-form__field'>
+              <label for="password">Password</label>
+              <input name='password' type="text">
+            </div>
+            <input class='c-button c-button--fltright' type="submit" value='Login'>
+          </form>
+        </div>
+        <!-- set focus to first element inside revealed tab when user selects a tab -->
+        <!-- will aria selected update when user clicks? do I do this with js? -->
+        <div class='c-tabs'>
+          <ul class='c-tabs__tabsList'>
+            <li class='c-tabs__tab is-selected'><a href="#tab-news" aria-selected='true'>News</a></li>
+            <li class='c-tabs__tab'><a href="#tab-archive">Archive</a></li>
+          </ul>
+          <div id='tab-news' class='c-tabs__tabPanel' aria-hidden='false' aria-labelledby='tab-news'>
+            <ul>
+              <li>
+                <h4 class='c-header c-header--blue c-header--small'>Lorem ipsum dolor</h4>
+                <p class='c-text'>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis </p>
+              </li>
+              <li>
+                <h4 class='c-header c-header--blue c-header--small'>Lorem ipsum dolor</h4>
+                <p class='c-text'>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis </p>
+              </li>
+              <li>
+                <h4 class='c-header c-header--blue c-header--small'>Lorem ipsum dolor</h4>
+                <p class='c-text'>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis </p>
+              </li>
+            </ul>
+          </div>
+          <div id='tab-archive' class='c-tabs__tabPanel c-tabs__tabPanel--archive is-hidden' aria-hidden='true' aria-labelledby='tab-archive'>
+            <ul>
+              <li><a href=""><h4 class='c-header c-header--small c-header--spacingafter c-header--blue'>Lorem ipsum dolor</h4></a></li>
+              <li><a href=""><h4 class='c-header c-header--small c-header--spacingafter c-header--blue'>Lorem ipsum dolor</h4></a></li>
+              <li><a href=""><h4 class='c-header c-header--small c-header--spacingafter c-header--blue'>Lorem ipsum dolor</h4></a></li>
+              <li><a href=""><h4 class='c-header c-header--small c-header--spacingafter c-header--blue'>Lorem ipsum dolor</h4></a></li>
+              <li><a href=""><h4 class='c-header c-header--small c-header--spacingafter c-header--blue'>Lorem ipsum dolor</h4></a></li>
+              <li><a href=""><h4 class='c-header c-header--small c-header--spacingafter c-header--blue'>Lorem ipsum dolor</h4></a></li>
+              <li><a href=""><h4 class='c-header c-header--small c-header--spacingafter c-header--blue'>Lorem ipsum dolor</h4></a></li>
+              <li><a href=""><h4 class='c-header c-header--small c-header--spacingafter c-header--blue'>Lorem ipsum dolor</h4></a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
       <article>
-        <h1 class='c-header'></h1>
-        <p class='c-text'></p>
-        <h3 class='c-header--small'></h3>
-        <ul class='c-list'>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+        <h2 class='c-header c-header--purple'>Best Bank Ever!</h2>
+        <p class='c-text'>Pellentesque habitant morbi tristique senectus et netus et <a class='c-link' href="">malesuada</a> fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+          Aenean ultricies mi vitae est. Mauris <a class='c-link' href="">placerat</a> eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.</p>
+        <h4 class='c-header c-header--small'>Reasons We're Awesome:</h4>
+        <div class='l-subsection'>
+          <ul class='c-list'>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Aliquam tincidunt mauris eu risus.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Vestibulum auctor dapibus neque.</li>
+          </ul>
+        </div>
         <section class='c-informational'>
-          <h3 class='c-header--small c-header--purple'></h3>
-          <p class='text'></p>
+          <h4 class='c-header--small c-header--purple'>Amazing Mobile Info</h4>
+          <p class='c-text'>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. </p>
         </section>
       </article>
       <article>
-        <h2 class='c-header c-header--medium c-header--split'><span>Rates</span>Check them out.</h2>
+        <h3 class='c-header c-header--medium c-header--split'><span>Rates</span>Check them out.</h3>
         <table class='c-table'>
           <thead>
             <tr>
-              <td class='is-hidden'>Bank Name</td>
-              <td>Annual Percentage Yield</td>
-              <td>Est. Earnings for 1 Year <sup><a href="#footnote">*</a></sup></td>
+              <th class='is-hidden'>Bank Name</th>
+              <th>Annual Percentage Yield</th>
+              <th>Est. Earnings for 1 Year <sup><a href="#footnote">*</a></sup></th>
             </tr>
           </thead>
           <tbody>
@@ -58,58 +125,6 @@
         <p id='footnote'><sup>*</sup>Based on $50,000 deposit.</p>
       </article>
     </main>
-    <aside>
-      <button class='c-button c-button--fullwidth'>Login</button>
-      <div class='c-overlay'>overlay</div>
-      <!-- give dialogue keyboard focus when user clicks button to open dialogue, start at first input  JS .focus()-->
-      <!-- last element (submit button, keyPress handler to trap forward tab key to redirect it to first element) -->
-      <!-- first element add keyPress handler to trap shift+tab key combination so backwards tab order doesn't leave the dialog (x button??) -->
-      <!-- make ESC key close dialogue and discard changes -->
-      <!-- RESTORE focus() to proper place after closing and/or submitting dialogue -->
-      <div class='c-dialog' role='dialog' aria-labelledby='dialogue-title'>
-        <button class='c-button c-button--close'>escape button</button>
-        <h2 class='c-header--medium' id='dialogue-title'>Sign In To Your Account</h2>
-        <form class='c-form' action="">
-          <label for="username"><input name='username' type="text"></label>
-          <label for="password"><input name='password' type="text"></label>
-          <input class='button' type="submit">
-        </form>
-      </div>
-      <!-- set focus to first element inside revealed tab when user selects a tab -->
-      <!-- will aria selected update when user clicks? do I do this with js? -->
-      <div class='c-tabs'>
-        <ul class='c-tabs__tabsList'>
-          <li class='c-tabs__tab is-active'><a href="#tab-news" aria-selected='true'></a></li>
-          <li class='c-tabs__tab'><a href="#tab-archive"></a></li>
-        </ul>
-        <div id='tab-news' class='c-tabs_tabPanel' aria-hidden='false' aria-labelledby='tab-news'>
-          <ul>
-            <li>
-              <h3 class='c-header c-header--small'></h3>
-              <p class='c-text'></p>
-            </li>
-            <li>
-              <h3 class='c-header c-header--small'></h3>
-              <p class='c-text'></p>
-            </li>
-            <li>
-              <h3 class='c-header c-header--small'></h3>
-              <p class='c-text'></p>
-            </li>
-          </ul>
-        </div>
-        <div id='tab-archive' class='c-tabs_tabPanel' aria-hidden='true' aria-labelledby='tab-archive'>
-          <a class='c-header c-header--small' href="">Lorem ipsum dolor</a>
-          <a class='c-header c-header--small' href="">Lorem ipsum dolor</a>
-          <a class='c-header c-header--small' href="">Lorem ipsum dolor</a>
-          <a class='c-header c-header--small' href="">Lorem ipsum dolor</a>
-          <a class='c-header c-header--small' href="">Lorem ipsum dolor</a>
-          <a class='c-header c-header--small' href="">Lorem ipsum dolor</a>
-          <a class='c-header c-header--small' href="">Lorem ipsum dolor</a>
-          <a class='c-header c-header--small' href="">Lorem ipsum dolor</a>
-        </div>
-      </div>
-    </aside>
   </div>
   <footer class='c-footer'>
     <div class='l-wrapper'>

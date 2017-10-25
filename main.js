@@ -1,5 +1,14 @@
 // set no js as default before document.loaded
 
+document.addEventListener('DOMContentLoaded', (event) => {
+
+let activeElems = document.querySelectorAll('.is-active');
+console.log(activeElems);
+
+for (let i = 0; i < activeElems.length; i++){
+  activeElems[i].classList.remove('is-active');
+}
+
 let tbody = `<tr>
   <td></td>
   <td></td>
@@ -35,3 +44,4 @@ let tbody = `<tr>
 //     this.setAttribute('aria-expanded', 'true');
 //   }
 // });
+});

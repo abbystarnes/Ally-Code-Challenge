@@ -1,0 +1,297 @@
+// global color variables
+  $blue: #328fc2;
+  $blue-lt: #eef5f0; // alternating table rows
+  $green: #bbd8c4;
+  $green-lt: #ddebe1; // inactive tab, alternating table rows
+  $purple: #650360;
+  $footer: #e7e8e9; // footer
+  $active-tab-bg: #f5f5f5; // active tab
+  $text: #505050; // dark grey text
+  $tab-border: #cccccc; // tabbing border
+  $white: #ffffff;
+  $overlay: rgba(0,0,0,.5); // overlay, dialogue box shadow
+
+  // max width 960px
+  // padding at max width = 10px (do math to get percentages)  approx 1%
+  // nav height 45px 3em
+  // under nav margin 65px 4.33em
+  // footer height 100px 6.67em
+  // 35px under h1s, ul, list items in aside 2.33em
+  // 25px under login button 1.67em
+  // 14px padding around green section, form, and tab sections .93em
+  // 30px top and bottom of tabbed sections 2em
+
+  // 14px text .93em
+  // 36p light large header 2.4em
+  // 18px bold button link 1.2em
+  // 16px bold small header 1.07em
+  // 18px regular tabs 1.2em
+  // 28px regular medium header 1.87em
+  // 16px regular table text 1.07em
+  // 18px bold bold table text 1.2em
+  // 12px light small table lettering .8em
+  // 16px bold selected nav link 1.07em
+  // 16px regular unselected nav link 1.07em
+  // 14px bold sign in modal labels .93em
+// global variables
+
+html {
+  font-size: 13px;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: $text;
+}
+
+@media only screen and (min-width:900px){
+  html {
+    font-size: 15px;
+  }
+}
+
+.l-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
+.is-active {
+  display: block;
+}
+
+.c-headersection {
+  background-color: $blue;
+  margin-bottom: 4.33em;
+}
+
+.c-header {
+  color: $text;
+  font-size: 2.4em;
+  font-weight: lighter;
+  margin-bottom: 1em;
+}
+
+.c-header--blue {
+  color: $blue
+}
+.c-header--purple {
+  color: $purple;
+}
+
+.c-logo {
+  height: 3em;
+  img {
+    height: 2.47em;
+    width: 10.13em;
+    margin-top: .265em;
+  }
+}
+
+.c-nav {
+  background-color: $blue;
+  ul {
+    display: none;
+    li {
+      a {
+        font-size: 1.07em;
+        color: $white;
+        text-decoration: none;
+        padding: 1em 0;
+        display: block;
+      }
+    }
+  }
+}
+
+.c-button {
+  margin-bottom: 1.67em;
+  text-decoration: none;
+  color: $white;
+  background-color: $purple;
+  padding: .6em 3em;
+  border: none;
+  font-size: 1em;
+}
+
+.c-button--hamburger {
+  float: right;
+  margin-top: calc(-3em + .23em);
+  border: 2px solid $white;
+  border-radius: 5px;
+  padding: .6em .6em;
+  background-color: $blue;
+}
+
+.c-button--fullwidth {
+  display: block;
+  width: 100%;
+}
+
+.c-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $overlay;
+}
+
+.c-dialog {
+  display: none;
+  position: fixed;
+  top: 9.73em;
+  background-color: $white;
+  left: 2.5%;
+  right: 2.5%;
+  padding: 2em;
+  -webkit-box-shadow: 0 3px 7px $overlay;
+  -moz-box-shadow: 0 3px 7px $overlay;
+  box-shadow: 0 3px 7px $overlay;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+// left: calc((100% - 30em)/2); after reaches full width
+// right: calc((100% - 30em)/2);
+
+.c-header--medium {
+  font-size: 1.87em;
+  margin-bottom: 1em;
+}
+
+.c-button--close {
+  background-color: transparent;
+  width: 3em;
+  height: 3em;
+  background-image: url('./img/times@2x.png');
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c-form {
+  display: block;
+  width: 100%;
+  .c-form__field {
+    display: flex;
+    label {
+      order: 1;
+      width: 7.6em;
+      line-height: 1.71em;
+    }
+    input {
+      order: 2;
+      flex: 1 1 auto;
+      border: 1px solid $blue;
+      padding: .33em;
+      margin-bottom: 1.33em;
+    }
+  }
+
+}
+
+.c-button--fltright {
+  float:right;
+  margin-bottom: 0;
+}
+
+.c-tabs {
+  margin-top: 3em;
+  .c-tabs__tabsList {
+    display: flex;
+    flex-direction: row;
+  }
+  .c-tabs__tab {
+    background-color: $green-lt;
+    border: 1px solid $tab-border;
+    border-bottom: none;
+    border-left: none;
+    font-size: 1.29em;
+    padding: .48em;
+    align-self: flex-end;
+    a {
+      text-decoration: none;
+      color: $blue;
+    }
+    margin-bottom: 0;
+  }
+
+  .c-tabs__tab.is-selected {
+    padding-top: .92em;
+    background-color: $active-tab-bg;
+    margin-bottom: -1px;
+    border: 1px solid $tab-border;
+    border-bottom: none;
+    border-left: none;
+    a {
+      color: $text;
+    }
+  }
+
+
+  .c-tabs__tabPanel {
+    padding-top: 2em;
+    background-color: $active-tab-bg;
+    border-top: 1px solid $tab-border;
+  }
+  ul {
+    height: 100%;
+    li {
+      padding: 0 1em;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  .c-tabs__tabPanel--archive {
+    padding-bottom: 2em;
+  }
+}
+
+.c-header--small {
+  font-weight: bold;
+  font-size: 1.07em;
+  line-height: 1.5;
+}
+
+.c-header--spacingafter {
+  margin-bottom: .93em;
+}
+
+.c-text {
+  line-height: 1.5;
+  margin-bottom: 2em;
+}
+
+.l-aside {
+  margin-bottom: 3.125em;
+}
+
+.c-link {
+  color: $blue;
+}
+
+.c-list {
+     li {
+       font-size: .875em;
+     }
+     list-style-type: disc;
+     list-style-position: inside;
+     list-style-position: inside;
+     line-height: 1.86em;
+}
+
+.l-subsection {
+  margin-bottom: 2em;
+}
+// // clearfix
+// .clearfix:after {
+//   content: "";
+//   display: table;
+//   clear: both;
+// }

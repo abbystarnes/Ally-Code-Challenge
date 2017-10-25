@@ -1,32 +1,200 @@
-/*
-html - font size declaration in px
+html {
+  font-size: 13px;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #505050; }
 
-l layout modules
+@media only screen and (min-width: 900px) {
+  html {
+    font-size: 15px; } }
+.l-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 2.5%;
+  padding-right: 2.5%; }
 
-c components
+.is-active {
+  display: block; }
 
-m modifiers under each component?
+.c-headersection {
+  background-color: #328fc2;
+  margin-bottom: 4.33em; }
 
-media queries
-  adjust html font size here
-  repeat same order inside
+.c-header {
+  color: #505050;
+  font-size: 2.4em;
+  font-weight: lighter;
+  margin-bottom: 1em; }
 
+.c-header--blue {
+  color: #328fc2; }
 
+.c-header--purple {
+  color: #650360; }
 
+.c-logo {
+  height: 3em; }
+  .c-logo img {
+    height: 2.47em;
+    width: 10.13em;
+    margin-top: .265em; }
 
-//// hide 'menu' text 
-  button {
-    background: url('hamburger.svg');
-  }
+.c-nav {
+  background-color: #328fc2; }
+  .c-nav ul {
+    display: none; }
+    .c-nav ul li a {
+      font-size: 1.07em;
+      color: white;
+      text-decoration: none;
+      padding: 1em 0;
+      display: block; }
 
-  button span {
-    position: absolute;
-    clip: rect(1px, 1px, 1px, 1px);
-    padding: 0;
-    border: 0;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-  }
+.c-button {
+  margin-bottom: 1.67em;
+  text-decoration: none;
+  color: white;
+  background-color: #650360;
+  padding: .6em 3em;
+  border: none;
+  font-size: 1em; }
 
-*/
+.c-button--hamburger {
+  float: right;
+  margin-top: calc(-3em + .23em);
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: .6em .6em;
+  background-color: #328fc2; }
+
+.c-button--fullwidth {
+  display: block;
+  width: 100%; }
+
+.c-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.c-dialog {
+  display: none;
+  position: fixed;
+  top: 9.73em;
+  background-color: white;
+  left: 2.5%;
+  right: 2.5%;
+  padding: 2em;
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box; }
+
+.c-header--medium {
+  font-size: 1.87em;
+  margin-bottom: 1em; }
+
+.c-button--close {
+  background-color: transparent;
+  width: 3em;
+  height: 3em;
+  background-image: url("./img/times@2x.png");
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.c-form {
+  display: block;
+  width: 100%; }
+  .c-form .c-form__field {
+    display: flex; }
+    .c-form .c-form__field label {
+      order: 1;
+      width: 7.6em;
+      line-height: 1.71em; }
+    .c-form .c-form__field input {
+      order: 2;
+      flex: 1 1 auto;
+      border: 1px solid #328fc2;
+      padding: .33em;
+      margin-bottom: 1.33em; }
+
+.c-button--fltright {
+  float: right;
+  margin-bottom: 0; }
+
+.c-tabs {
+  margin-top: 3em; }
+  .c-tabs .c-tabs__tabsList {
+    display: flex;
+    flex-direction: row; }
+  .c-tabs .c-tabs__tab {
+    background-color: #ddebe1;
+    border: 1px solid #cccccc;
+    border-bottom: none;
+    border-left: none;
+    font-size: 1.29em;
+    padding: .48em;
+    align-self: flex-end;
+    margin-bottom: 0; }
+    .c-tabs .c-tabs__tab a {
+      text-decoration: none;
+      color: #328fc2; }
+  .c-tabs .c-tabs__tab.is-selected {
+    padding-top: .92em;
+    background-color: whitesmoke;
+    margin-bottom: -1px;
+    border: 1px solid #cccccc;
+    border-bottom: none;
+    border-left: none; }
+    .c-tabs .c-tabs__tab.is-selected a {
+      color: #505050; }
+  .c-tabs .c-tabs__tabPanel {
+    padding-top: 2em;
+    background-color: whitesmoke;
+    border-top: 1px solid #cccccc; }
+  .c-tabs ul {
+    height: 100%; }
+    .c-tabs ul li {
+      padding: 0 1em; }
+      .c-tabs ul li a {
+        text-decoration: none; }
+  .c-tabs .c-tabs__tabPanel--archive {
+    padding-bottom: 2em; }
+
+.c-header--small {
+  font-weight: bold;
+  font-size: 1.07em;
+  line-height: 1.5; }
+
+.c-header--spacingafter {
+  margin-bottom: .93em; }
+
+.c-text {
+  line-height: 1.5;
+  margin-bottom: 2em; }
+
+.l-aside {
+  margin-bottom: 3.125em; }
+
+.c-link {
+  color: #328fc2; }
+
+.c-list {
+  list-style-type: disc;
+  list-style-position: inside;
+  list-style-position: inside;
+  line-height: 1.86em; }
+  .c-list li {
+    font-size: .875em; }
+
+.l-subsection {
+  margin-bottom: 2em; }
