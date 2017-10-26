@@ -37,23 +37,44 @@ html {
 .c-nav {
   background-color: #328fc2; }
   .c-nav ul {
-    display: none; }
+    transition: height .5s ease;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    margin-top: 0; }
     .c-nav ul li a {
       font-size: 1.07em;
       color: white;
       text-decoration: none;
       padding: 1em 0;
       display: block; }
-  .c-nav .is-active {
-    display: block; }
+
+.c-nav ul.is-active {
+  transition: all .5s ease;
+  visibility: visible;
+  opacity: 1;
+  height: 14.67em; }
+
+.c-nav--header ul li a:active, .c-nav--header ul li a:focus {
+  background-color: #006899; }
+
+.c-nav--header ul.is-active {
+  margin-bottom: 2em;
+  margin-top: 1em; }
 
 .c-nav--footer {
   background-color: #e7e8e9; }
   .c-nav--footer ul {
-    display: block; }
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    transition: all 0s; }
     .c-nav--footer ul li a {
       color: #328fc2;
       padding-bottom: 0; }
+  .c-nav--footer ul li a:active, .c-nav--footer ul li a:focus {
+    font-weight: bold; }
 
 .c-footer {
   background-color: #e7e8e9;
@@ -105,6 +126,8 @@ html {
   display: none;
   position: fixed;
   top: 9.73em;
+  max-width: 350px;
+  margin: 0 auto;
   background-color: white;
   left: 2.5%;
   right: 2.5%;
@@ -290,12 +313,20 @@ html {
     display: inline-block;
     float: right; }
     .c-nav.c-nav--header ul {
+      transition: all 0s;
+      height: 3em;
+      margin-top: 0;
+      margin-bottom: 0;
       display: inline-block;
-      float: right; }
+      float: right;
+      visibility: visible;
+      opacity: 1; }
       .c-nav.c-nav--header ul li {
         display: inline-block; }
         .c-nav.c-nav--header ul li a {
           padding: .91em 1em; }
+          .c-nav.c-nav--header ul li a:hover {
+            background-color: #006899; }
 
   .c-button--hamburger {
     display: none; }
@@ -312,4 +343,6 @@ html {
     .c-nav.c-nav--footer li {
       display: inline-block; }
       .c-nav.c-nav--footer li a {
-        padding: 0 .91em; } }
+        padding: 0 .91em; }
+        .c-nav.c-nav--footer li a:hover {
+          font-weight: bold; } }

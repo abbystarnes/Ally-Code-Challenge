@@ -20,6 +20,14 @@ for (let i = 1; i < panels.length; i++){
 menuBtn.addEventListener('click', ()=>{
   const mainNav = document.getElementById('c-nav-links');
   const logo = document.getElementById('logo');
+  let isExpanded = menuBtn.getAttribute('aria-expanded');
+  menuBtn.setAttribute('aria-expanded', 'true');
+  if (isExpanded === 'false'){
+    isExpanded = 'true';
+  } else {
+    isExpanded = 'false';
+  }
+  menuBtn.setAttribute('aria-expanded', isExpanded);
   mainNav.classList.toggle('is-active');
   if (mainNav.classList.contains('is-active')){
     mainNav.firstElementChild.focus();
@@ -32,10 +40,12 @@ menuBtn.addEventListener('click', ()=>{
 const loginBtn = document.getElementById('btn-login');
 const dialog = document.getElementById('dialog');
 const overlay = document.getElementById('overlay');
+const formField1 = document.getElementById('form-field-1');
 
 loginBtn.addEventListener('click', ()=>{
   overlay.classList.toggle('is-active');
   dialog.classList.toggle('is-active');
+  formField1.focus();
 });
 
 // close dialog w/overlay
@@ -43,6 +53,7 @@ overlay.addEventListener('click', () => {
   event.preventDefault();
   dialog.classList.toggle('is-active');
   overlay.classList.toggle('is-active');
+  logo.focus();
 });
 
 // close dialog w/x button
@@ -51,6 +62,7 @@ closeBtn.addEventListener('click', () => {
   event.preventDefault();
   dialog.classList.toggle('is-active');
   overlay.classList.toggle('is-active');
+  logo.focus();
 });
 
 // toggle tabs
@@ -58,13 +70,18 @@ for (let i = 0; i < tabs.length; i++){
   tabs[i].addEventListener('click', ()=>{
     for (let x = 0; x < tabs.length; x++){
       tabs[x].classList.remove('is-selected');
+      tabs[x].setAttribute('aria-selected', 'false');
     }
     for (let x = 0; x < panels.length; x++){
       panels[x].classList.remove('is-selected');
+      panels[x].setAttribute('aria-hidden', 'true');
     }
     tabs[i].classList.add('is-selected');
+    tabs[i].setAttribute('aria-selected', 'true');
     let selected_panel = document.getElementById(tabs[i].dataset.panel);
     selected_panel.classList.add('is-selected');
+    selected_panel.firstElementChild.focus();
+    selected_panel.setAttribute('aria-hidden', 'false');
   });
 }
 
@@ -87,18 +104,4 @@ for (let i = 0; i < data.length; i++){
   }
 }
 
-
-// toggle aria expanded on nav button
-// var toggle = document.querySelector('#toggle');
-// var menu = document.querySelector('#menu');
-//
-// toggle.addEventListener('click', function(){
-//   if (menu.classList.contains('is-active')) {
-//     this.setAttribute('aria-expanded', 'false');
-//     menu.classList.remove('is-active');
-//   } else {
-//     menu.classList.add('is-active');
-//     this.setAttribute('aria-expanded', 'true');
-//   }
-// });
 });

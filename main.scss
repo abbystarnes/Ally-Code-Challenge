@@ -1,6 +1,7 @@
 // global color variables
   $blue: #328fc2;
   $blue-lt: #eef5f0; // alternating table rows
+  $blue-dark: #006899; // nav link active state
   $green: #bbd8c4;
   $green-lt: #ddebe1; // inactive tab, alternating table rows
   $purple: #650360;
@@ -10,30 +11,6 @@
   $tab-border: #cccccc; // tabbing border
   $white: #ffffff;
   $overlay: rgba(0,0,0,.5); // overlay, dialogue box shadow
-
-  // max width 960px
-  // padding at max width = 10px (do math to get percentages)  approx 1%
-  // nav height 45px 3em
-  // under nav margin 65px 4.33em
-  // footer height 100px 6.67em
-  // 35px under h1s, ul, list items in aside 2.33em
-  // 25px under login button 1.67em
-  // 14px padding around green section, form, and tab sections .93em
-  // 30px top and bottom of tabbed sections 2em
-
-  // 14px text .93em
-  // 36p light large header 2.4em
-  // 18px bold button link 1.2em
-  // 16px bold small header 1.07em
-  // 18px regular tabs 1.2em
-  // 28px regular medium header 1.87em
-  // 16px regular table text 1.07em
-  // 18px bold bold table text 1.2em
-  // 12px light small table lettering .8em
-  // 16px bold selected nav link 1.07em
-  // 16px regular unselected nav link 1.07em
-  // 14px bold sign in modal labels .93em
-// global variables
 
 html {
   font-size: 13px;
@@ -78,10 +55,15 @@ html {
   }
 }
 
+
 .c-nav {
   background-color: $blue;
   ul {
-    display: none;
+    transition: height .5s ease;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    margin-top: 0;
     li {
       a {
         font-size: 1.07em;
@@ -92,21 +74,45 @@ html {
       }
     }
   }
-  .is-active {
-    display: block;
+}
+
+
+.c-nav ul.is-active {
+  transition: all .5s ease;
+  visibility: visible;
+  opacity: 1;
+  height: 14.67em;
+}
+
+.c-nav--header {
+  ul li a {
+        &:active, &:focus {
+          background-color: $blue-dark;
+        }
   }
+}
+.c-nav--header ul.is-active {
+    margin-bottom: 2em;
+    margin-top: 1em;
 }
 
 .c-nav--footer {
   background-color: $footer;
   ul {
     display: block;
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    transition: all 0s;
     li{
       a {
         color: $blue;
         padding-bottom: 0;
       }
     }
+  }
+  ul li a:active, ul li a:focus {
+    font-weight: bold;
   }
 }
 
@@ -168,6 +174,8 @@ html {
   display: none;
   position: fixed;
   top: 9.73em;
+  max-width: 350px;
+  margin: 0 auto;
   background-color: $white;
   left: 2.5%;
   right: 2.5%;
@@ -274,6 +282,7 @@ html {
   .c-tabs__tab:first-child.is-selected {
     border-left: none;
   }
+
 
   .c-tabs__tabPanel {
     padding-top: 2em;
@@ -417,12 +426,21 @@ html {
     display: inline-block;
     float: right;
     ul {
+      transition: all 0s;
+      height: 3em;
+      margin-top: 0;
+      margin-bottom: 0;
       display: inline-block;
       float:right;
+      visibility: visible;
+      opacity: 1;
       li {
         display: inline-block;
         a {
           padding: .91em 1em;
+          &:hover {
+            background-color: $blue-dark;
+          }
         }
       }
     }
@@ -443,10 +461,17 @@ html {
     float: right;
     li {
       display: inline-block;
-      // margin-left: 2.625em;
       a {
         padding: 0 .91em;
+        &:hover {
+          font-weight: bold;
+        }
       }
     }
   }
 }
+
+
+/// form validation
+/// hover & active states
+/// set focus after login
