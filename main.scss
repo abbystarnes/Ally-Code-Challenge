@@ -39,12 +39,7 @@ html {
   font-size: 13px;
   font-family: 'Helvetica Neue', sans-serif;
   color: $text;
-}
-
-@media only screen and (min-width:900px){
-  html {
-    font-size: 15px;
-  }
+  box-sizing: border-box;
 }
 
 .l-wrapper {
@@ -79,6 +74,7 @@ html {
 
 .c-logo {
   height: 3em;
+  display: inline-block;
   img {
     height: 2.47em;
     width: 10.13em;
@@ -122,6 +118,7 @@ html {
 
 .c-copyright {
   color: $blue;
+  display: inline-block;
 }
 
 .c-header__split {
@@ -380,9 +377,51 @@ html {
 }
 
 
-// // clearfix
-// .clearfix:after {
-//   content: "";
-//   display: table;
-//   clear: both;
-// }
+// clearfix
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+// mobile-out media queries
+// change to 877px?
+@media only screen and (min-width:768px){
+  html {
+    font-size: 15px;
+  }
+  .c-nav.c-nav--header {
+    display: inline-block;
+    float: right;
+    ul {
+      display: inline-block;
+      float:right;
+      li {
+        display: inline-block;
+        a {
+          padding: .91em 1em;
+        }
+      }
+    }
+  }
+  .c-button--hamburger {
+    display: none;
+  }
+  .l-main {
+    display:flex;
+    .l-aside {
+      order: 2;
+      margin-left: 2.34%;
+    }
+  }
+  .c-nav.c-nav--footer {
+    float: right;
+    li {
+      display: inline-block;
+      // margin-left: 2.625em;
+      a {
+        padding: 0 .91em;
+      }
+    }
+  }
+}

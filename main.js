@@ -18,7 +18,7 @@ for (let i = 0; i < data.length; i++){
     trow.append(cell);
   });
   trow.children[1].innerHTML = trow.children[1].innerHTML  + ' %';
-  trow.children[2].innerHTML = '$' + parseInt(trow.children[2].innerHTML).toFixed(2);
+  trow.children[2].innerHTML = '$' + parseFloat(trow.children[2].innerHTML).toFixed(2);
   if (trow.firstElementChild.innerHTML === 'URBank'){
     tbody.prepend(trow);
   } else {

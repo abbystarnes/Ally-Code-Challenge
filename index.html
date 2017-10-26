@@ -17,7 +17,7 @@
       <h1 class='c-logo'><a href="index.html"><img src="./img/urbank@2x.png" alt="URBANK"></a></h1>
       <!-- start hidden, show if no js, hide nav button if javascript is not available (progressive enhancement) by adding js class or is-hidden -->
       <!--  -->
-      <nav class='c-nav' role='navigation'>
+      <nav class='c-nav c-nav--header clearfix' role='navigation'>
         <a href='#c-nav-links' class='c-button c-button--hamburger' aria-expanded='false' aria-controls='c-nav-links'><span>Menu</span></a>
         <ul id='c-nav-links' class='is-active'>
           <li><a href="#">home</a></li>
@@ -30,7 +30,7 @@
     </div>
   </header>
   <div class='l-wrapper'>
-    <main>
+    <main class='l-main'>
       <aside class='l-aside'>
         <button class='c-button c-button--fullwidth'>Login</button>
         <div class='c-overlay is-active'></div>
@@ -91,49 +91,51 @@
           </div>
         </div>
       </aside>
-      <article class='l-article'>
-        <h2 class='c-header c-header--purple'>Best Bank Ever!</h2>
-        <p class='c-text'>Pellentesque habitant morbi tristique senectus et netus et <a class='c-link' href="">malesuada</a> fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
-          Aenean ultricies mi vitae est. Mauris <a class='c-link' href="">placerat</a> eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.</p>
-        <h4 class='c-header c-header--small'>Reasons We're Awesome:</h4>
-        <div class='l-subsection'>
-          <ul class='c-list'>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>Aliquam tincidunt mauris eu risus.</li>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>Lorem ipsum dolor sit amet.</li>
-            <li>Vestibulum auctor dapibus neque.</li>
-          </ul>
-        </div>
-        <section class='c-informational'>
-          <h4 class='c-header--small c-header--purple'>Amazing Mobile Info</h4>
-          <p class='c-text'>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. </p>
-          <img class='c-informational__img' src="img/iphone@2x.png" alt="" role='presentation'>
-        </section>
-      </article>
-      <article class='l-article'>
-        <h3 class='c-header c-header--medium c-header--split'><span class='c-header__split'>Rates&nbsp;</span> Check them out.</h3>
-        <table class='c-table'>
-          <thead>
-            <tr>
-              <th class='is-hidden'>Bank Name</th>
-              <th>Annual Percentage Yield</th>
-              <th>Est. Earnings for 1 Year <sup><a href="#footnote">*</a></sup></th>
-            </tr>
-          </thead>
-          <tfoot>
-            <tr>
-              <td class='c-table__footnote' colspan='3' id='footnote'><sup>*</sup>Based on $50,000 deposit.</td>
-            </tr>
-          </tfoot>
-          <tbody id='js-tbody'>
-          </tbody>
-        </table>
-      </article>
+      <section class='l-maincontent'>
+        <article class='l-article'>
+          <h2 class='c-header c-header--purple'>Best Bank Ever!</h2>
+          <p class='c-text'>Pellentesque habitant morbi tristique senectus et netus et <a class='c-link' href="">malesuada</a> fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+            Aenean ultricies mi vitae est. Mauris <a class='c-link' href="">placerat</a> eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.</p>
+          <h4 class='c-header c-header--small'>Reasons We're Awesome:</h4>
+          <div class='l-subsection'>
+            <ul class='c-list'>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Aliquam tincidunt mauris eu risus.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Vestibulum auctor dapibus neque.</li>
+            </ul>
+          </div>
+          <section class='c-informational'>
+            <h4 class='c-header--small c-header--purple'>Amazing Mobile Info</h4>
+            <p class='c-text'>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. </p>
+            <img class='c-informational__img' src="img/iphone@2x.png" alt="" role='presentation'>
+          </section>
+        </article>
+        <article class='l-article'>
+          <h3 class='c-header c-header--medium c-header--split'><span class='c-header__split'>Rates&nbsp;</span> Check them out.</h3>
+          <table class='c-table'>
+            <thead>
+              <tr>
+                <th class='is-hidden'>Bank Name</th>
+                <th>Annual Percentage Yield</th>
+                <th>Est. Earnings for 1 Year <sup><a href="#footnote">*</a></sup></th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <td class='c-table__footnote' colspan='3' id='footnote'><sup>*</sup>Based on $50,000 deposit.</td>
+              </tr>
+            </tfoot>
+            <tbody id='js-tbody'>
+            </tbody>
+          </table>
+        </article>
+      </section>
     </main>
   </div>
-  <footer class='c-footer'>
-    <div class='l-wrapper'>
+  <footer class='c-footer clearfix'>
+    <div class='l-wrapper clearfix'>
       <p class='c-copyright'>© 2017 URBank</p>
       <nav class='c-nav c-nav--footer' role='navigation'>
         <ul>
