@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <title>URBANK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
   <script type='text/javascript' src='code-test.json'></script>
   <script type='text/javascript' src='main.js'></script>
 </head>
@@ -34,12 +34,6 @@
       <aside class='l-aside' role='region' name='news articles'>
         <button id='btn-login' class='c-button c-button--fullwidth'>Login</button>
         <div id='overlay' class='c-overlay is-active'></div>
-        <!-- remember to change aria states as they change -->
-        <!-- give dialog keyboard focus when user clicks button to open dialog, start at first input  JS .focus()-->
-        <!-- last element (submit button, keyPress handler to trap forward tab key to redirect it to first element) -->
-        <!-- first element add keyPress handler to trap shift+tab key combination so backwards tab order doesn't leave the dialog (x button??) -->
-        <!-- make ESC key close dialogue and discard changes -->
-        <!-- RESTORE focus() to proper place after closing and/or submitting dialogue -->
         <div id='dialog' class='c-dialog is-active' role='dialog' aria-labelledby='dialog-title'>
           <button id='btn-close-dialog' type='button' class='c-button c-button--close' aria-label='close'></button>
           <h3 class='c-header c-header--medium' id='dialog-title'>Sign In To Your Account</h3>
@@ -55,8 +49,6 @@
             <input class='c-button c-button--fltright' type="submit" value='Login'>
           </form>
         </div>
-        <!-- set focus to first element inside revealed tab when user selects a tab -->
-        <!-- will aria selected update when user clicks? do I do this with js? -->
         <div class='c-tabs'>
           <ul class='c-tabs__tabsList'>
             <li class='c-tabs__tab is-selected' aria-selected='true' data-panel='panel-news'>News</li>
