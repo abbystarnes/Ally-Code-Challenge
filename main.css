@@ -174,19 +174,26 @@ html {
     .c-tabs .c-tabs__tab a {
       text-decoration: none;
       color: #328fc2; }
+  .c-tabs .c-tabs__tab:first-child {
+    border-right: none; }
   .c-tabs .c-tabs__tab.is-selected {
     padding-top: .92em;
     background-color: whitesmoke;
     margin-bottom: -1px;
     border: 1px solid #cccccc;
     border-bottom: none;
-    border-left: none; }
+    border-left: 1px solid #cccccc; }
     .c-tabs .c-tabs__tab.is-selected a {
       color: #505050; }
+  .c-tabs .c-tabs__tab:first-child.is-selected {
+    border-left: none; }
   .c-tabs .c-tabs__tabPanel {
     padding-top: 2em;
     background-color: whitesmoke;
-    border-top: 1px solid #cccccc; }
+    border-top: 1px solid #cccccc;
+    display: none; }
+  .c-tabs .c-tabs__tabPanel.is-selected {
+    display: block; }
   .c-tabs ul {
     height: 100%; }
     .c-tabs ul li {
@@ -297,7 +304,8 @@ html {
     display: flex; }
     .l-main .l-aside {
       order: 2;
-      margin-left: 2.34%; }
+      margin-left: 2.34%;
+      min-width: 201.5px; }
 
   .c-nav.c-nav--footer {
     float: right; }

@@ -10,6 +10,12 @@ for (let i = 0; i < activeElems.length; i++){
 const menuBtn = document.getElementById('menu-btn');
 menuBtn.classList.remove('is-hidden');
 
+const tabs = document.getElementsByClassName('c-tabs__tab');
+const panels = document.getElementsByClassName('c-tabs__tabPanel');
+for (let i = 1; i < panels.length; i++){
+  panels[i].classList.remove('is-selected')
+}
+
 // toggle navigation, focus on first nav elem or h1/logo for accessibility
 menuBtn.addEventListener('click', ()=>{
   const mainNav = document.getElementById('c-nav-links');
@@ -47,6 +53,20 @@ closeBtn.addEventListener('click', () => {
   overlay.classList.toggle('is-active');
 });
 
+// toggle tabs
+for (let i = 0; i < tabs.length; i++){
+  tabs[i].addEventListener('click', ()=>{
+    for (let x = 0; x < tabs.length; x++){
+      tabs[x].classList.remove('is-selected');
+    }
+    for (let x = 0; x < panels.length; x++){
+      panels[x].classList.remove('is-selected');
+    }
+    tabs[i].classList.add('is-selected');
+    let selected_panel = document.getElementById(tabs[i].dataset.panel);
+    selected_panel.classList.add('is-selected');
+  });
+}
 
 
 // fill table with json company data

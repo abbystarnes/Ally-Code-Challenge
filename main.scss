@@ -49,14 +49,6 @@ html {
   padding-right: 2.5%;
 }
 
-// .is-active {
-//   display: block;
-// }
-
-.is-hidden {
-
-}
-
 .c-headersection {
   background-color: $blue;
   margin-bottom: 4.33em;
@@ -252,6 +244,7 @@ html {
     border: 1px solid $tab-border;
     border-bottom: none;
     border-left: none;
+    // border-right: none;
     font-size: 1.29em;
     padding: .48em;
     align-self: flex-end;
@@ -262,24 +255,37 @@ html {
     margin-bottom: 0;
   }
 
+  .c-tabs__tab:first-child {
+    border-right: none;
+  }
+
   .c-tabs__tab.is-selected {
     padding-top: .92em;
     background-color: $active-tab-bg;
     margin-bottom: -1px;
     border: 1px solid $tab-border;
     border-bottom: none;
-    border-left: none;
+    border-left: 1px solid $tab-border;
     a {
       color: $text;
     }
   }
 
+  .c-tabs__tab:first-child.is-selected {
+    border-left: none;
+  }
 
   .c-tabs__tabPanel {
     padding-top: 2em;
     background-color: $active-tab-bg;
     border-top: 1px solid $tab-border;
+    display: none;
   }
+
+  .c-tabs__tabPanel.is-selected {
+    display: block;
+  }
+
   ul {
     height: 100%;
     li {
@@ -429,6 +435,8 @@ html {
     .l-aside {
       order: 2;
       margin-left: 2.34%;
+      /// work on this if time - why is width different between panels?
+      min-width: 201.5px;
     }
   }
   .c-nav.c-nav--footer {

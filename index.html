@@ -34,6 +34,7 @@
       <aside class='l-aside'>
         <button id='btn-login' class='c-button c-button--fullwidth'>Login</button>
         <div id='overlay' class='c-overlay is-active'></div>
+        <!-- remember to change aria states as they change -->
         <!-- give dialog keyboard focus when user clicks button to open dialog, start at first input  JS .focus()-->
         <!-- last element (submit button, keyPress handler to trap forward tab key to redirect it to first element) -->
         <!-- first element add keyPress handler to trap shift+tab key combination so backwards tab order doesn't leave the dialog (x button??) -->
@@ -58,10 +59,10 @@
         <!-- will aria selected update when user clicks? do I do this with js? -->
         <div class='c-tabs'>
           <ul class='c-tabs__tabsList'>
-            <li class='c-tabs__tab is-selected'><a href="#tab-news" aria-selected='true'>News</a></li>
-            <li class='c-tabs__tab'><a href="#tab-archive">Archive</a></li>
+            <li class='c-tabs__tab is-selected' aria-selected='true' data-panel='panel-news'>News</li>
+            <li class='c-tabs__tab' href="#tab-archive" href="#tab-archive" data-panel='panel-archive'>Archive</li>
           </ul>
-          <div id='tab-news' class='c-tabs__tabPanel' aria-hidden='false' aria-labelledby='tab-news'>
+          <div id='panel-news' class='c-tabs__tabPanel is-selected' aria-hidden='false' aria-labelledby='tab-news'>
             <ul>
               <li>
                 <h4 class='c-header c-header--blue c-header--small'>Lorem ipsum dolor</h4>
@@ -77,7 +78,7 @@
               </li>
             </ul>
           </div>
-          <div id='tab-archive' class='c-tabs__tabPanel c-tabs__tabPanel--archive is-hidden' aria-hidden='true' aria-labelledby='tab-archive'>
+          <div id='panel-archive' class='c-tabs__tabPanel c-tabs__tabPanel--archive is-selected' aria-hidden='true' aria-labelledby='tab-archive'>
             <ul>
               <li><a href=""><h4 class='c-header c-header--small c-header--spacingafter c-header--blue'>Lorem ipsum dolor</h4></a></li>
               <li><a href=""><h4 class='c-header c-header--small c-header--spacingafter c-header--blue'>Lorem ipsum dolor</h4></a></li>
