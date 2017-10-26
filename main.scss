@@ -102,6 +102,33 @@ html {
   }
 }
 
+.c-nav--footer {
+  background-color: $footer;
+  ul {
+    display: block;
+    li{
+      a {
+        color: $blue;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.c-footer {
+  background-color: $footer;
+  padding: 1em;
+}
+
+.c-copyright {
+  color: $blue;
+}
+
+.c-header__split {
+  border-right: 1px solid $text;
+  font-weight: lighter;
+}
+
 .c-button {
   margin-bottom: 1.67em;
   text-decoration: none;
@@ -158,6 +185,7 @@ html {
 .c-header--medium {
   font-size: 1.87em;
   margin-bottom: 1em;
+  font-weight: normal;
 }
 
 .c-button--close {
@@ -272,6 +300,10 @@ html {
   margin-bottom: 3.125em;
 }
 
+.l-article {
+  margin-bottom: 3.125em;
+}
+
 .c-link {
   color: $blue;
 }
@@ -289,6 +321,65 @@ html {
 .l-subsection {
   margin-bottom: 2em;
 }
+
+.c-informational {
+  background-color: $green;
+  padding: 1em;
+
+  .c-informational__img {
+    width: 6.75em;
+    height: 11.25em;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.c-table {
+  width: 100%;
+  tbody tr:first-child {
+    font-weight: bold;
+    font-size: 1.125em;
+    td {
+      padding: .89em;
+    }
+  }
+
+  tbody tr {
+    background-color: $blue-lt;
+    padding: 1em;
+    &:nth-child(even){
+      background-color: $green-lt;
+    }
+  }
+  td {
+    text-align: right;
+    padding: 1em;
+  }
+  th {
+    &:first-child {
+      visibility: hidden;
+    }
+    padding: 1em;
+    &:last-child {
+      padding-right: 0;
+    }
+    font-size: .75em;
+    sup a {
+      text-decoration: none;
+      color: $text;
+    }
+  }
+  tbody td:first-child {
+    text-align: left;
+  }
+  .c-table__footnote {
+    font-size: .75em;
+    text-align: right;
+    padding-right: 0;
+  }
+}
+
+
 // // clearfix
 // .clearfix:after {
 //   content: "";

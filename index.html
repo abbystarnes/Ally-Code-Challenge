@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="main.css">
+  <script type='text/javascript' src='code-test.json'></script>
   <script type='text/javascript' src='main.js'></script>
 </head>
 
@@ -90,7 +91,7 @@
           </div>
         </div>
       </aside>
-      <article>
+      <article class='l-article'>
         <h2 class='c-header c-header--purple'>Best Bank Ever!</h2>
         <p class='c-text'>Pellentesque habitant morbi tristique senectus et netus et <a class='c-link' href="">malesuada</a> fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
           Aenean ultricies mi vitae est. Mauris <a class='c-link' href="">placerat</a> eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.</p>
@@ -107,10 +108,11 @@
         <section class='c-informational'>
           <h4 class='c-header--small c-header--purple'>Amazing Mobile Info</h4>
           <p class='c-text'>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. </p>
+          <img class='c-informational__img' src="img/iphone@2x.png" alt="" role='presentation'>
         </section>
       </article>
-      <article>
-        <h3 class='c-header c-header--medium c-header--split'><span>Rates</span>Check them out.</h3>
+      <article class='l-article'>
+        <h3 class='c-header c-header--medium c-header--split'><span class='c-header__split'>Rates&nbsp;</span> Check them out.</h3>
         <table class='c-table'>
           <thead>
             <tr>
@@ -119,17 +121,29 @@
               <th>Est. Earnings for 1 Year <sup><a href="#footnote">*</a></sup></th>
             </tr>
           </thead>
-          <tbody>
+          <tfoot>
+            <tr>
+              <td class='c-table__footnote' colspan='3' id='footnote'><sup>*</sup>Based on $50,000 deposit.</td>
+            </tr>
+          </tfoot>
+          <tbody id='js-tbody'>
           </tbody>
         </table>
-        <p id='footnote'><sup>*</sup>Based on $50,000 deposit.</p>
       </article>
     </main>
   </div>
   <footer class='c-footer'>
     <div class='l-wrapper'>
-      <p class='c-copyright'></p>
-      <nav class='c-nav' role='navigation'></nav>
+      <p class='c-copyright'>© 2017 URBank</p>
+      <nav class='c-nav c-nav--footer' role='navigation'>
+        <ul>
+          <li><a href="#">home</a></li>
+          <li><a href="#">employee</a></li>
+          <li><a href="#">company</a></li>
+          <li><a href="#">services</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </nav>
     </div>
   </footer>
 </body>
