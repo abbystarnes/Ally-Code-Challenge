@@ -49,8 +49,12 @@ html {
   padding-right: 2.5%;
 }
 
-.is-active {
-  display: block;
+// .is-active {
+//   display: block;
+// }
+
+.is-hidden {
+
 }
 
 .c-headersection {
@@ -96,6 +100,9 @@ html {
       }
     }
   }
+  .is-active {
+    display: block;
+  }
 }
 
 .c-nav--footer {
@@ -138,7 +145,8 @@ html {
 
 .c-button--hamburger {
   float: right;
-  margin-top: calc(-3em + .23em);
+  margin-top: calc(-3em + .125em);
+  margin-bottom: 0;
   border: 2px solid $white;
   border-radius: 5px;
   padding: .6em .6em;
@@ -160,6 +168,10 @@ html {
   background-color: $overlay;
 }
 
+.c-overlay.is-active {
+  display:block;
+}
+
 .c-dialog {
   display: none;
   position: fixed;
@@ -174,6 +186,10 @@ html {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding-box;
   background-clip: padding-box;
+}
+
+.c-dialog.is-active {
+  display: block;
 }
 
 // left: calc((100% - 30em)/2); after reaches full width
@@ -353,14 +369,15 @@ html {
     padding: 1em;
   }
   th {
+    padding: 1em;
+    text-align: right;
+    font-size: .75em;
     &:first-child {
       visibility: hidden;
     }
-    padding: 1em;
     &:last-child {
       padding-right: 0;
     }
-    font-size: .75em;
     sup a {
       text-decoration: none;
       color: $text;

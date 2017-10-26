@@ -14,11 +14,11 @@
 <body>
   <header class='c-headersection'>
     <div class='l-wrapper'>
-      <h1 class='c-logo'><a href="index.html"><img src="./img/urbank@2x.png" alt="URBANK"></a></h1>
+      <h1 id='logo' class='c-logo'><a href="index.html"><img src="./img/urbank@2x.png" alt="URBANK"></a></h1>
       <!-- start hidden, show if no js, hide nav button if javascript is not available (progressive enhancement) by adding js class or is-hidden -->
       <!--  -->
       <nav class='c-nav c-nav--header clearfix' role='navigation'>
-        <a href='#c-nav-links' class='c-button c-button--hamburger' aria-expanded='false' aria-controls='c-nav-links'><span>Menu</span></a>
+        <button id='menu-btn' href='#c-nav-links' class='c-button c-button--hamburger' aria-expanded='false' aria-controls='c-nav-links'><span>Menu</span></button>
         <ul id='c-nav-links' class='is-active'>
           <li><a href="#">home</a></li>
           <li><a href="#">employee</a></li>
@@ -32,16 +32,16 @@
   <div class='l-wrapper'>
     <main class='l-main'>
       <aside class='l-aside'>
-        <button class='c-button c-button--fullwidth'>Login</button>
-        <div class='c-overlay is-active'></div>
-        <!-- give dialogue keyboard focus when user clicks button to open dialogue, start at first input  JS .focus()-->
+        <button id='btn-login' class='c-button c-button--fullwidth'>Login</button>
+        <div id='overlay' class='c-overlay is-active'></div>
+        <!-- give dialog keyboard focus when user clicks button to open dialog, start at first input  JS .focus()-->
         <!-- last element (submit button, keyPress handler to trap forward tab key to redirect it to first element) -->
         <!-- first element add keyPress handler to trap shift+tab key combination so backwards tab order doesn't leave the dialog (x button??) -->
         <!-- make ESC key close dialogue and discard changes -->
         <!-- RESTORE focus() to proper place after closing and/or submitting dialogue -->
-        <div class='c-dialog is-active' role='dialog' aria-labelledby='dialogue-title'>
-          <button type='button' class='c-button c-button--close' aria-label='close'></button>
-          <h3 class='c-header c-header--medium' id='dialogue-title'>Sign In To Your Account</h3>
+        <div id='dialog' class='c-dialog is-active' role='dialog' aria-labelledby='dialog-title'>
+          <button id='btn-close-dialog' type='button' class='c-button c-button--close' aria-label='close'></button>
+          <h3 class='c-header c-header--medium' id='dialog-title'>Sign In To Your Account</h3>
           <form class='c-form' action="">
             <div class='c-form__field'>
               <label for="username">Username</label>

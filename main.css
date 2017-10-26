@@ -10,9 +10,6 @@ html {
   padding-left: 2.5%;
   padding-right: 2.5%; }
 
-.is-active {
-  display: block; }
-
 .c-headersection {
   background-color: #328fc2;
   margin-bottom: 4.33em; }
@@ -47,6 +44,8 @@ html {
       text-decoration: none;
       padding: 1em 0;
       display: block; }
+  .c-nav .is-active {
+    display: block; }
 
 .c-nav--footer {
   background-color: #e7e8e9; }
@@ -79,7 +78,8 @@ html {
 
 .c-button--hamburger {
   float: right;
-  margin-top: calc(-3em + .23em);
+  margin-top: calc(-3em + .125em);
+  margin-bottom: 0;
   border: 2px solid white;
   border-radius: 5px;
   padding: .6em .6em;
@@ -98,6 +98,9 @@ html {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5); }
 
+.c-overlay.is-active {
+  display: block; }
+
 .c-dialog {
   display: none;
   position: fixed;
@@ -112,6 +115,9 @@ html {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding-box;
   background-clip: padding-box; }
+
+.c-dialog.is-active {
+  display: block; }
 
 .c-header--medium {
   font-size: 1.87em;
@@ -248,6 +254,7 @@ html {
     padding: 1em; }
   .c-table th {
     padding: 1em;
+    text-align: right;
     font-size: .75em; }
     .c-table th:first-child {
       visibility: hidden; }
