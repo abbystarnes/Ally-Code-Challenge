@@ -31,7 +31,7 @@
   </header>
   <div class='l-wrapper'>
     <main class='l-main'>
-      <aside class='l-aside'>
+      <aside class='l-aside' role='region' name='news articles'>
         <button id='btn-login' class='c-button c-button--fullwidth'>Login</button>
         <div id='overlay' class='c-overlay is-active'></div>
         <!-- remember to change aria states as they change -->
@@ -46,11 +46,11 @@
           <form class='c-form' action="#">
             <div id='form-field-1' class='c-form__field'>
               <label for="username">Username</label>
-              <input name='username' type="text">
+              <input name='username' type="text" pattern='^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$' required title='Enter a username consisting of 2-20 letters and numbers'>
             </div>
             <div class='c-form__field'>
               <label for="password">Password</label>
-              <input name='password' type="text">
+              <input name='password' type="password" pattern="[0-9a-fA-F]{4,8}" title="Enter an ID consisting of 4-8 hexadecimal digits" required>
             </div>
             <input class='c-button c-button--fltright' type="submit" value='Login'>
           </form>
@@ -60,7 +60,7 @@
         <div class='c-tabs'>
           <ul class='c-tabs__tabsList'>
             <li class='c-tabs__tab is-selected' aria-selected='true' data-panel='panel-news'>News</li>
-            <li class='c-tabs__tab' href="#tab-archive" href="#tab-archive" data-panel='panel-archive'>Archive</li>
+            <li class='c-tabs__tab' data-panel='panel-archive'>Archive</li>
           </ul>
           <div id='panel-news' class='c-tabs__tabPanel is-selected' aria-hidden='false' aria-labelledby='tab-news'>
             <ul>
@@ -108,9 +108,13 @@
             </ul>
           </div>
           <section class='c-informational'>
-            <h4 class='c-header--small c-header--purple'>Amazing Mobile Info</h4>
-            <p class='c-text'>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. </p>
-            <img class='c-informational__img' src="img/iphone@2x.png" alt="" role='presentation'>
+            <div class='c-informational__section'>
+              <h4 class='c-header--small c-header--purple'>Amazing Mobile Info</h4>
+              <p class='c-text'>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. </p>
+            </div>
+            <div class='c-informational__section'>
+              <img class='c-informational__img' src="img/iphone@2x.png" alt="" role='presentation'>
+            </div>
           </section>
         </article>
         <article class='l-article'>
@@ -140,11 +144,11 @@
       <p class='c-copyright'>© 2017 URBank</p>
       <nav class='c-nav c-nav--footer' role='navigation'>
         <ul>
-          <li><a href="#">home</a></li>
-          <li><a href="#">employee</a></li>
-          <li><a href="#">company</a></li>
-          <li><a href="#">services</a></li>
-          <li><a href="#">contact</a></li>
+          <li><a title='home' href="#">home</a></li>
+          <li><a title='employee' href="#">employee</a></li>
+          <li><a title='company' href="#">company</a></li>
+          <li><a title='services' href="#">services</a></li>
+          <li><a title='contact' href="#">contact</a></li>
         </ul>
       </nav>
     </div>

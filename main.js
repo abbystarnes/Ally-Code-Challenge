@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 // hide hidden content if js loads, show nav btn
 const activeElems = document.querySelectorAll('.is-active');
-for (let i = 0; i < activeElems.length; i++){
+for (let i = 0; i < activeElems.length; i+= 1){
   activeElems[i].classList.remove('is-active');
 }
 const menuBtn = document.getElementById('menu-btn');
@@ -45,7 +45,10 @@ const formField1 = document.getElementById('form-field-1');
 loginBtn.addEventListener('click', ()=>{
   overlay.classList.toggle('is-active');
   dialog.classList.toggle('is-active');
-  formField1.focus();
+  window.setTimeout(function ()
+ {     
+   formField1.focus();
+ }, 0);
 });
 
 // close dialog w/overlay

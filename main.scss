@@ -12,6 +12,13 @@
   $white: #ffffff;
   $overlay: rgba(0,0,0,.5); // overlay, dialogue box shadow
 
+// clearfix
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 html {
   font-size: 13px;
   font-family: 'Helvetica Neue', sans-serif;
@@ -34,7 +41,7 @@ html {
 .c-header {
   color: $text;
   font-size: 2.4em;
-  font-weight: lighter;
+  font-weight: 200;
   margin-bottom: 1em;
 }
 
@@ -76,7 +83,6 @@ html {
   }
 }
 
-
 .c-nav ul.is-active {
   transition: all .5s ease;
   visibility: visible;
@@ -86,14 +92,18 @@ html {
 
 .c-nav--header {
   ul li a {
+        padding-left: 1em;
+        padding-right: 1em;
+        margin-left: -2.5%;
+        margin-right: -2.5%;
         &:active, &:focus {
           background-color: $blue-dark;
         }
   }
 }
 .c-nav--header ul.is-active {
-    margin-bottom: 2em;
-    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-top: 1em;
 }
 
 .c-nav--footer {
@@ -153,7 +163,8 @@ html {
 
 .c-button--fullwidth {
   display: block;
-  width: 100%;
+  width: 50%;
+  padding: 1em;
 }
 
 .c-overlay {
@@ -252,14 +263,10 @@ html {
     border: 1px solid $tab-border;
     border-bottom: none;
     border-left: none;
-    // border-right: none;
+    color: $blue;
     font-size: 1.29em;
     padding: .48em;
     align-self: flex-end;
-    a {
-      text-decoration: none;
-      color: $blue;
-    }
     margin-bottom: 0;
   }
 
@@ -268,6 +275,7 @@ html {
   }
 
   .c-tabs__tab.is-selected {
+    color: $text;
     padding-top: .92em;
     background-color: $active-tab-bg;
     margin-bottom: -1px;
@@ -353,12 +361,16 @@ html {
 .c-informational {
   background-color: $green;
   padding: 1em;
-
+  margin-bottom: 10em;
   .c-informational__img {
     width: 6.75em;
     height: 11.25em;
     margin: 0 auto;
-    display: block;
+    // display: block;
+
+    margin-bottom: -8em;
+    margin-top: -2em;
+    float:right;
   }
 }
 
@@ -408,16 +420,7 @@ html {
   }
 }
 
-
-// clearfix
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 // mobile-out media queries
-// change to 877px?
 @media only screen and (min-width:768px){
   html {
     font-size: 15px;
@@ -430,14 +433,17 @@ html {
       height: 3em;
       margin-top: 0;
       margin-bottom: 0;
-      display: inline-block;
+      display: flex;
       float:right;
       visibility: visible;
       opacity: 1;
+      padding-top: 0;
       li {
         display: inline-block;
         a {
           padding: .91em 1em;
+          margin-left: 0;
+          margin-right: 0;
           &:hover {
             background-color: $blue-dark;
           }
@@ -448,13 +454,19 @@ html {
   .c-button--hamburger {
     display: none;
   }
+  .c-button--fullwidth {
+    padding: .6em 3em;
+    width: 100%;
+  }
   .l-main {
     display:flex;
+    .l-maincontent {
+      flex: 3;
+    }
     .l-aside {
       order: 2;
+      flex: 1;
       margin-left: 2.34%;
-      /// work on this if time - why is width different between panels?
-      min-width: 201.5px;
     }
   }
   .c-nav.c-nav--footer {
@@ -463,15 +475,36 @@ html {
       display: inline-block;
       a {
         padding: 0 .91em;
+        &::after {
+            display: block;
+            content: attr(title);
+            font-weight: bold;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
         &:hover {
           font-weight: bold;
+          &::after {
+            display: block;
+          }
         }
       }
+    }
+  }
+  .c-informational{
+    display:flex;
+    margin-bottom: 0;
+    p {
+      margin-bottom: 0;
+    }
+    .c-informational__section img {
+      margin-top: -6.25em;
+      margin-left: 1em;
+      margin-right: 1em;
     }
   }
 }
 
 
 /// form validation
-/// hover & active states
-/// set focus after login
